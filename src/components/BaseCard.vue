@@ -1,16 +1,21 @@
 <template>
   <div>
-    <header>
+    <header v-if="$slots.header">
       <slot name="header">
-        <h2>Default</h2>
+        <!-- <h2>Default</h2> -->
       </slot>
     </header>
     <slot></slot>
   </div>
 </template>
-
+/*With v-if="$slots" we can check if content is actually received by the slot to
+render conditionally*/
 <script>
-export default {};
+export default {
+  mounted() {
+    console.log(this.$slots.header);
+  },
+};
 </script>
 
 <style scoped>
