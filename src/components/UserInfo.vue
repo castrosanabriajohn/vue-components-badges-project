@@ -5,7 +5,9 @@
         <h3>{{ fullName }}</h3>
         <base-badge :type="role" :caption="role.toUpperCase()"></base-badge>
       </template>
-      <p>{{ infoText }}</p>
+      <template v-slot:default>
+        <p>{{ infoText }}</p>
+      </template>
     </BaseCard>
   </section>
 </template>
@@ -25,7 +27,6 @@ section {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 1rem;
 }
-
 section header {
   display: flex;
   justify-content: space-between;
